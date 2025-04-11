@@ -6,10 +6,12 @@ import androidx.room.Insert;
 import androidx.room.Query;
 
 import com.example.project02.database.entities.User;
+
 @Dao
 public interface UserDAO {
     @Insert
     void insert(User user);
+
     @Query("SELECT * FROM users WHERE username = :username")
     LiveData<User> getUserByUserName(String username);
 

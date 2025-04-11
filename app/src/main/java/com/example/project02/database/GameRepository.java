@@ -13,12 +13,14 @@ import java.util.concurrent.Future;
 public class GameRepository {
     private final CharacterDAO characterDAO;
     private final UserDAO userDAO;
+    private final InventoryDAO inventoryDAO;
     private static GameRepository repository;
 
     private GameRepository(Application application) {
         AppDatabase db = AppDatabase.getDatabase(application);
         this.characterDAO = db.characterDAO();
         this.userDAO = db.userDAO();
+        this.inventoryDAO = db.inventoryDAO();
     }
 
     public static GameRepository getRepository(Application application) {
