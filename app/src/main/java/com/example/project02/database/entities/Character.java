@@ -4,11 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import com.example.project02.database.CharactersDatabase;
+import com.example.project02.database.AppDatabase;
 
 import java.util.Objects;
 
-@Entity(tableName = CharactersDatabase.CHARACTER_TABLE)
+@Entity(tableName = "characters")
 public class Character {
 
     @PrimaryKey(autoGenerate = true)
@@ -37,7 +37,7 @@ public class Character {
         this.species = species;
         this.characterClass = characterClass;
         this.age = age;
-        this.isPublic = isPublic = false;
+        this.isPublic = false;
         this.userId = userId;
     }
 
