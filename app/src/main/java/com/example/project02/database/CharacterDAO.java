@@ -11,7 +11,7 @@ import java.util.List;
 @Dao
 public interface CharacterDAO {
     @Insert
-    void insert (Character character);
+    void insert(Character character);
 
     @Query("SELECT * FROM characters where userId = :userId")
     List<Character> getCharacterByUserId(int userId);
