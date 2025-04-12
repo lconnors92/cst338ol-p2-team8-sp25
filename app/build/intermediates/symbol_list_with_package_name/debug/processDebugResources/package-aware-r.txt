@@ -3458,6 +3458,7 @@ id parent
 id parentPanel
 id parentRelative
 id parent_matrix
+id passwordEditText
 id password_toggle
 id path
 id pathRelative
@@ -3509,6 +3510,7 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id signInButton
 id sin
 id skipCollapsed
 id skipped
@@ -3595,6 +3597,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id usernameEditText
 id vertical
 id vertical_only
 id view_offset_helper
@@ -3606,6 +3609,7 @@ id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
+id welcomeTextView
 id west
 id withText
 id with_icon
@@ -3867,6 +3871,7 @@ string fab_transformation_sheet_behavior
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
+string login_to_your_forge_and_fate_account
 string m3_exceed_max_badge_text_suffix
 string m3_ref_typeface_brand_medium
 string m3_ref_typeface_brand_regular
@@ -3967,6 +3972,7 @@ string mtrl_switch_track_decoration_path
 string mtrl_switch_track_path
 string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
+string password
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -3978,7 +3984,10 @@ string searchview_clear_text_content_description
 string searchview_navigation_content_description
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
+string sign_in
+string sign_up
 string status_bar_notification_info_overflow
+string username
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
