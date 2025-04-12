@@ -3,21 +3,23 @@ package com.example.project02.database.entities;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.example.project02.database.AppDatabase;
+
 import java.util.Objects;
 
-@Entity(tableName = "users")
+@Entity(tableName = AppDatabase.USER_TABLE)
 public class User {
     @PrimaryKey(autoGenerate = true)
     private int id;
 
     private String username;
     private String password;
-    private boolean isAdmin;
+    private boolean isAdmin = false;
 
     public User(String username, String password) {
         this.username = username;
         this.password = password;
-        this.isAdmin = false;
+        isAdmin = false;
     }
 
     @Override
