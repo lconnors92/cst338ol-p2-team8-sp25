@@ -3,6 +3,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">Project 02</string>
+    <string name="login_to_your_forge_and_fate_account">Login to your Forge and Fate Account!</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="username">Username</string>
     <style name="Base.Theme.Project02" parent="Theme.Material3.DayNight.NoActionBar">
         
         
