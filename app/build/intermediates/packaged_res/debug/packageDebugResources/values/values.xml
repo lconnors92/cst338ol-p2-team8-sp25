@@ -2,12 +2,16 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <string name="access_inventory">Access Inventory</string>
     <string name="app_name">Project 02</string>
+    <string name="character_selection">Character Selection</string>
+    <string name="create_character">Create Character</string>
     <string name="login_to_your_forge_and_fate_account">Login to your Forge and Fate Account!</string>
     <string name="password">Password</string>
     <string name="sign_in">Sign In</string>
     <string name="sign_up">Sign Up</string>
     <string name="username">Username</string>
+    <string name="welcome_user">Welcome to Forge &amp; Fate!</string>
     <style name="Base.Theme.Project02" parent="Theme.Material3.DayNight.NoActionBar">
         
         
