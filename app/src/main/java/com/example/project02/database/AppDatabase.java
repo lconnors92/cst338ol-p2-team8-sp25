@@ -1,5 +1,5 @@
 package com.example.project02.database;
-import com.example.project02.MainActivity;
+import com.example.project02.LoginActivity;
 
 import android.content.Context;
 import android.util.Log;
@@ -44,7 +44,7 @@ public abstract class AppDatabase extends RoomDatabase {
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
-            Log.i(MainActivity.TAG, "DATABASE CREATED!");
+            Log.i(LoginActivity.TAG, "DATABASE CREATED!");
             databaseWriteExecutor.execute(() -> {
                 UserDAO dao = INSTANCE.userDAO();
                 dao.deleteAll();

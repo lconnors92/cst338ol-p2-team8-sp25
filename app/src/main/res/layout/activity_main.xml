@@ -9,65 +9,47 @@
 
     <TextView
         android:id="@+id/welcomeTextView"
-        android:layout_width="405dp"
-        android:layout_height="104dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
         android:gravity="center"
-        android:text="@string/login_to_your_forge_and_fate_account"
-        android:textSize="36sp"
-        android:layout_marginTop="30dp"
+        android:text="@string/welcome_user"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/usernameEditText"
-        android:layout_width="227dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:gravity="center"
-        android:hint="@string/username"
+    <Button
+        android:id="@+id/createCharacterButton"
+        android:layout_width="300dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="70dp"
+        android:text="@string/create_character"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeTextView" />
-
-    <EditText
-        android:id="@+id/passwordEditText"
-        android:layout_width="227dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:gravity="center"
-        android:hint="@string/password"
-        android:textSize="32sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usernameEditText" />
+        app:layout_constraintTop_toBottomOf="@id/welcomeTextView" />
 
     <Button
-        android:id="@+id/signInButton"
+        android:id="@+id/characterSelectionButton"
         android:layout_width="300dp"
         android:layout_height="125dp"
         android:layout_marginTop="32dp"
-        android:text="@string/sign_in"
+        android:text="@string/character_selection"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/passwordEditText" />
-
+        app:layout_constraintTop_toBottomOf="@id/createCharacterButton" />
     <Button
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="250dp"
-        android:text="@string/sign_up"
-        android:textSize="28sp"
+        android:id="@+id/accessInventoryButton"
+        android:layout_width="300dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/access_inventory"
+        android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/signInButton" />
+        app:layout_constraintTop_toBottomOf="@id/characterSelectionButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
