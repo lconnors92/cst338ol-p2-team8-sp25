@@ -3235,6 +3235,7 @@ id clockwise
 id closest
 id collapseActionView
 id compress
+id confirmPasswordEditText
 id confirm_button
 id constraint
 id container
@@ -3514,6 +3515,8 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id signupButton
+id signupTextView
 id sin
 id skipCollapsed
 id skipped
@@ -3738,6 +3741,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_login
 layout activity_main
+layout activity_signup
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3869,6 +3873,7 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string character_selection
 string clear_text_end_icon_content_description
+string confirm_passwordsignup
 string create_character
 string error_a11y_label
 string error_icon_content_description
@@ -3981,6 +3986,7 @@ string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
 string password
 string password_toggle_content_description
+string passwordsignup
 string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
@@ -3993,8 +3999,11 @@ string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string sign_in
 string sign_up
+string sign_up_here
+string sign_up_in_activity_sign_up
 string status_bar_notification_info_overflow
 string username
+string usernamesignup
 string welcome_user
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light

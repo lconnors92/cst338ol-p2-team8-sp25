@@ -9,4 +9,9 @@
     <string name="character_selection">Character Selection</string>
     <string name="create_character">Create Character</string>
     <string name="access_inventory">Access Inventory</string>
+    <string name="sign_up_here">Sign Up Here!</string>
+    <string name="usernamesignup">Username</string>
+    <string name="passwordsignup">Password</string>
+    <string name="confirm_passwordsignup">Confirm Password</string>
+    <string name="sign_up_in_activity_sign_up">Sign Up</string>
 </resources>

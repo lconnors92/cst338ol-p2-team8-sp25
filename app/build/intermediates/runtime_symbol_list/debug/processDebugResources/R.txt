@@ -3234,6 +3234,7 @@ int id clockwise 0x7f08007b
 int id closest 0x7f08007c
 int id collapseActionView 0x7f08007d
 int id compress 0x7f08007e
+int id confirmPasswordEditText 0x7f080202
 int id confirm_button 0x7f08007f
 int id constraint 0x7f080080
 int id container 0x7f080081
@@ -3513,6 +3514,8 @@ int id shortcut 0x7f080192
 int id showCustom 0x7f080193
 int id showHome 0x7f080194
 int id showTitle 0x7f080195
+int id signupButton 0x7f080203
+int id signupTextView 0x7f080204
 int id sin 0x7f080196
 int id skipCollapsed 0x7f080197
 int id skipped 0x7f080198
@@ -3737,6 +3740,7 @@ int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
 int layout activity_login 0x7f0b001c
 int layout activity_main 0x7f0b001d
+int layout activity_signup 0x7f0b006d
 int layout custom_dialog 0x7f0b001e
 int layout design_bottom_navigation_item 0x7f0b001f
 int layout design_bottom_sheet_dialog 0x7f0b0020
@@ -3868,6 +3872,7 @@ int string character_counter_overflowed_content_description 0x7f0f002d
 int string character_counter_pattern 0x7f0f002e
 int string character_selection 0x7f0f002f
 int string clear_text_end_icon_content_description 0x7f0f0030
+int string confirm_passwordsignup 0x7f0f00b0
 int string create_character 0x7f0f0031
 int string error_a11y_label 0x7f0f0032
 int string error_icon_content_description 0x7f0f0033
@@ -3980,6 +3985,7 @@ int string mtrl_timepicker_cancel 0x7f0f009d
 int string mtrl_timepicker_confirm 0x7f0f009e
 int string password 0x7f0f009f
 int string password_toggle_content_description 0x7f0f00a0
+int string passwordsignup 0x7f0f00b1
 int string path_password_eye 0x7f0f00a1
 int string path_password_eye_mask_strike_through 0x7f0f00a2
 int string path_password_eye_mask_visible 0x7f0f00a3
@@ -3992,8 +3998,11 @@ int string side_sheet_accessibility_pane_title 0x7f0f00a9
 int string side_sheet_behavior 0x7f0f00aa
 int string sign_in 0x7f0f00ab
 int string sign_up 0x7f0f00ac
+int string sign_up_here 0x7f0f00b2
+int string sign_up_in_activity_sign_up 0x7f0f00b3
 int string status_bar_notification_info_overflow 0x7f0f00ad
 int string username 0x7f0f00ae
+int string usernamesignup 0x7f0f00b4
 int string welcome_user 0x7f0f00af
 int style AlertDialog_AppCompat 0x7f100000
 int style AlertDialog_AppCompat_Light 0x7f100001
