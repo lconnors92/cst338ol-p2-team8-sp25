@@ -28,6 +28,11 @@ public class LoginActivity extends AppCompatActivity {
 
         binding.loginButton.setOnClickListener(v -> verifyUser());
 
+        binding.signupButton.setOnClickListener(v -> {
+            startActivity(new Intent(LoginActivity.this, SignupActivity.class));
+        });
+
+
     }
 
     private void verifyUser() {
