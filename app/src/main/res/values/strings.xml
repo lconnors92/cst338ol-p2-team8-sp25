@@ -5,4 +5,8 @@
     <string name="password">Password</string>
     <string name="sign_in">Sign In</string>
     <string name="sign_up">Sign Up</string>
+    <string name="welcome_user">Welcome to Forge &amp; Fate!</string>
+    <string name="character_selection">Character Selection</string>
+    <string name="create_character">Create Character</string>
+    <string name="access_inventory">Access Inventory</string>
 </resources>

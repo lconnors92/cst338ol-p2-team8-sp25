@@ -44,8 +44,8 @@
 29-->C:\Users\Ethan\AndroidStudioProjects\cst338ol-p2-team8-sp25\app\src\main\AndroidManifest.xml:13:9-47
 30        <activity
 30-->C:\Users\Ethan\AndroidStudioProjects\cst338ol-p2-team8-sp25\app\src\main\AndroidManifest.xml:15:9-23:20
-31            android:name="com.example.project02.MainActivity"
-31-->C:\Users\Ethan\AndroidStudioProjects\cst338ol-p2-team8-sp25\app\src\main\AndroidManifest.xml:16:13-41
+31            android:name="com.example.project02.LoginActivity"
+31-->C:\Users\Ethan\AndroidStudioProjects\cst338ol-p2-team8-sp25\app\src\main\AndroidManifest.xml:16:13-42
 32            android:exported="true" >
 32-->C:\Users\Ethan\AndroidStudioProjects\cst338ol-p2-team8-sp25\app\src\main\AndroidManifest.xml:17:13-36
 33            <intent-filter>

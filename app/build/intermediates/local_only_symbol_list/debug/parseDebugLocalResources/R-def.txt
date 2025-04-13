@@ -9,7 +9,7 @@ id passwordEditText
 id signInButton
 id usernameEditText
 id welcomeTextView
-layout activity_main
+layout activity_login
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name

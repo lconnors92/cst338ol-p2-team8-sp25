@@ -4,6 +4,7 @@ ADDED from C:\Users\Ethan\AndroidStudioProjects\cst338ol-p2-team8-sp25\app\src\m
 INJECTED from C:\Users\Ethan\AndroidStudioProjects\cst338ol-p2-team8-sp25\app\src\main\AndroidManifest.xml:2:1-26:12
 INJECTED from C:\Users\Ethan\AndroidStudioProjects\cst338ol-p2-team8-sp25\app\src\main\AndroidManifest.xml:2:1-26:12
 INJECTED from C:\Users\Ethan\AndroidStudioProjects\cst338ol-p2-team8-sp25\app\src\main\AndroidManifest.xml:2:1-26:12
+MERGED from [androidx.databinding:viewbinding:8.9.1] C:\Users\Ethan\.gradle\caches\8.11.1\transforms\d8ce449b6fb90d3f9172a9f8fba7d4be\transformed\viewbinding-8.9.1\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\Ethan\.gradle\caches\8.11.1\transforms\a613be2bd6d2554766400ae9806842fa\transformed\material-1.12.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\Ethan\.gradle\caches\8.11.1\transforms\a59a5d9905fbb10073e1a702f5801abd\transformed\constraintlayout-2.2.1\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\Ethan\.gradle\caches\8.11.1\transforms\b50510208bcfc2a1c2a8e44ab5298ff6\transformed\appcompat-resources-1.7.0\AndroidManifest.xml:2:1-7:12
@@ -102,12 +103,12 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Et
 		ADDED from C:\Users\Ethan\AndroidStudioProjects\cst338ol-p2-team8-sp25\app\src\main\AndroidManifest.xml:13:9-47
 	android:dataExtractionRules
 		ADDED from C:\Users\Ethan\AndroidStudioProjects\cst338ol-p2-team8-sp25\app\src\main\AndroidManifest.xml:7:9-65
-activity#com.example.project02.MainActivity
+activity#com.example.project02.LoginActivity
 ADDED from C:\Users\Ethan\AndroidStudioProjects\cst338ol-p2-team8-sp25\app\src\main\AndroidManifest.xml:15:9-23:20
 	android:exported
 		ADDED from C:\Users\Ethan\AndroidStudioProjects\cst338ol-p2-team8-sp25\app\src\main\AndroidManifest.xml:17:13-36
 	android:name
-		ADDED from C:\Users\Ethan\AndroidStudioProjects\cst338ol-p2-team8-sp25\app\src\main\AndroidManifest.xml:16:13-41
+		ADDED from C:\Users\Ethan\AndroidStudioProjects\cst338ol-p2-team8-sp25\app\src\main\AndroidManifest.xml:16:13-42
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Users\Ethan\AndroidStudioProjects\cst338ol-p2-team8-sp25\app\src\main\AndroidManifest.xml:18:13-22:29
 action#android.intent.action.MAIN
@@ -122,6 +123,8 @@ uses-sdk
 INJECTED from C:\Users\Ethan\AndroidStudioProjects\cst338ol-p2-team8-sp25\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Ethan\AndroidStudioProjects\cst338ol-p2-team8-sp25\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Ethan\AndroidStudioProjects\cst338ol-p2-team8-sp25\app\src\main\AndroidManifest.xml
+MERGED from [androidx.databinding:viewbinding:8.9.1] C:\Users\Ethan\.gradle\caches\8.11.1\transforms\d8ce449b6fb90d3f9172a9f8fba7d4be\transformed\viewbinding-8.9.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.databinding:viewbinding:8.9.1] C:\Users\Ethan\.gradle\caches\8.11.1\transforms\d8ce449b6fb90d3f9172a9f8fba7d4be\transformed\viewbinding-8.9.1\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\Ethan\.gradle\caches\8.11.1\transforms\a613be2bd6d2554766400ae9806842fa\transformed\material-1.12.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\Ethan\.gradle\caches\8.11.1\transforms\a613be2bd6d2554766400ae9806842fa\transformed\material-1.12.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\Ethan\.gradle\caches\8.11.1\transforms\a59a5d9905fbb10073e1a702f5801abd\transformed\constraintlayout-2.2.1\AndroidManifest.xml:5:5-44
