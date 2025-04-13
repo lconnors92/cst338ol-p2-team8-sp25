@@ -3,9 +3,13 @@ package com.example.project02.database;
 import android.app.Application;
 import android.util.Log;
 
+import androidx.lifecycle.LiveData;
+
 import com.example.project02.database.entities.Character;
+import com.example.project02.database.entities.User;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
@@ -58,5 +62,24 @@ public class GameRepository {
             Log.e("CharacterRepository", "Error fetching public characters", e);
         }
         return null;
+    }
+
+    public void insertCharacter(Character character) {
+        AppDatabase.databaseWriteExecutor.execute(() ->
+        {
+            characterDAO.insert(character);
+        });
+    }
+
+    public LiveData<User> getUserByUserName(String username) {
+        return userDAO.getUserByUserName(username);
+    }
+
+    public LiveData<User> getUserByUserId(int userId) {
+        return userDAO.getUserByUserId(userId);
+    }
+
+    public LiveData<List<Character>> getAllLogsByUserIdLiveData(int loggedInUserId) {
+        return characterDAO.getRecordsetUserIdLiveData(loggedInUserId);
     }
 }

@@ -9,7 +9,7 @@ import com.example.project02.database.AppDatabase;
 
 import java.util.Objects;
 
-@Entity(tableName = "characters")
+@Entity(tableName = AppDatabase.CHARACTER_TABLE)
 public class Character {
 
     @PrimaryKey(autoGenerate = true)
