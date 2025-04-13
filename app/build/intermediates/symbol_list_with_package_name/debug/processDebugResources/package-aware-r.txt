@@ -3124,6 +3124,7 @@ id TOP_END
 id TOP_START
 id above
 id accelerate
+id accessInventoryButton
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -3222,6 +3223,7 @@ id center_vertical
 id chain
 id chain2
 id chains
+id characterSelectionButton
 id checkbox
 id checked
 id chronometer
@@ -3244,6 +3246,7 @@ id coordinator
 id cos
 id counterclockwise
 id cradle
+id createCharacterButton
 id currentState
 id custom
 id customPanel
@@ -3353,6 +3356,7 @@ id line3
 id linear
 id listMode
 id list_item
+id loginButton
 id m3_side_sheet
 id main
 id marquee
@@ -3510,7 +3514,6 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
-id signInButton
 id sin
 id skipCollapsed
 id skipped
@@ -3734,6 +3737,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_login
+layout activity_main
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3843,6 +3847,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string access_inventory
 string androidx_startup
 string app_name
 string appbar_scrolling_view_behavior
@@ -3862,7 +3867,9 @@ string call_notification_screening_text
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
+string character_selection
 string clear_text_end_icon_content_description
+string create_character
 string error_a11y_label
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
@@ -3988,6 +3995,7 @@ string sign_in
 string sign_up
 string status_bar_notification_info_overflow
 string username
+string welcome_user
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
