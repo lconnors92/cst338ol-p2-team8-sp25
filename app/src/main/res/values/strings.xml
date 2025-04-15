@@ -5,7 +5,7 @@
     <string name="password">Password</string>
     <string name="sign_in">Sign In</string>
     <string name="sign_up">Sign Up</string>
-    <string name="welcome_user">Welcome to Forge &amp; Fate!</string>
+    <string name="welcome_user">Welcome!</string>
     <string name="character_selection">Character Selection</string>
     <string name="create_character">Create Character</string>
     <string name="access_inventory">Access Inventory</string>
@@ -17,4 +17,5 @@
     <string name="public_character_list">Public Character List</string>
     <string name="claim">Claim</string>
     <string name="admin_only">Admin Only!</string>
+    <string name="characters">Characters Owned: %d</string>
 </resources>

@@ -3225,6 +3225,7 @@ id center_vertical
 id chain
 id chain2
 id chains
+id characterCountTextView
 id characterRecyclerItemTextView
 id characterSelectionButton
 id checkbox
@@ -3882,6 +3883,7 @@ string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
 string character_selection
+string characters
 string claim
 string clear_text_end_icon_content_description
 string confirm_passwordsignup
