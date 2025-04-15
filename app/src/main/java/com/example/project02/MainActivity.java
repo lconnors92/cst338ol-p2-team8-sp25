@@ -3,6 +3,7 @@ package com.example.project02;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.project02.database.AppDatabase;
 import com.example.project02.database.GameRepository;
 import com.example.project02.database.entities.User;
 import com.example.project02.databinding.ActivityMainBinding;
@@ -25,7 +27,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        //Admin Checker
+        AppDatabase database = AppDatabase.getDatabase(this);
+        int userId = getIntent().getIntExtra(MAIN_ACTIVITY_USER_ID, -1);
+        database.userDAO().getUserByUserId(userId).observe(this, user -> {
+            if (user != null) {
+                // Show/hide admin button
+                binding.adminButton.setVisibility(user.isAdmin() ? View.VISIBLE : View.GONE);
 
+                // Setup other buttons
+                setupCharacterButtons();
+            }
+        });
+
+    }
+    private void setupCharacterButtons() {
         // Button to create a character
         binding.createCharacterButton.setOnClickListener(v -> {
             // Launch create character activity
@@ -48,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
             // startActivity(intent);
         });
     }
+
+
 
     static Intent mainActivityIntentFactory(Context context, int userId) {
         Intent intent = new Intent(context, MainActivity.class);

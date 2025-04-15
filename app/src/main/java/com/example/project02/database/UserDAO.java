@@ -28,5 +28,7 @@ public interface UserDAO {
 
     @Query("SELECT * FROM " + AppDatabase.USER_TABLE + " WHERE id = :userId")
     LiveData<User> getUserByUserId(int userId);
-}
+    }
+
+
 

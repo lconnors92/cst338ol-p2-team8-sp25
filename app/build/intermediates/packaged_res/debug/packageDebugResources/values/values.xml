@@ -3,6 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <string name="access_inventory">Access Inventory</string>
+    <string name="admin_only">Admin Only!</string>
     <string name="app_name">Project 02</string>
     <string name="character_selection">Character Selection</string>
     <string name="claim">Claim</string>

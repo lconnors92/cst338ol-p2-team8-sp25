@@ -3182,6 +3182,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id adminButton
 id alertTitle
 id aligned
 id all
@@ -3860,6 +3861,7 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string access_inventory
+string admin_only
 string androidx_startup
 string app_name
 string appbar_scrolling_view_behavior
