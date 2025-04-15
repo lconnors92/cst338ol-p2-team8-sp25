@@ -1,5 +1,8 @@
 package com.example.project02;
 
+import static java.lang.String.*;
+
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
 
 
+    @SuppressLint("DefaultLocale")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,9 +38,14 @@ public class MainActivity extends AppCompatActivity {
             if (user != null) {
                 // Show/hide admin button
                 binding.adminButton.setVisibility(user.isAdmin() ? View.VISIBLE : View.GONE);
-
+                binding.welcomeTextView.setText(format("Welcome, %s, to Forge & Fate! ", user.getUsername()));
                 // Setup other buttons
                 setupCharacterButtons();
+
+                //testing
+                database.characterDAO().getCharacterCountByUser(userId).observe(this, count -> {
+                    binding.characterCountTextView.setText(String.format("Characters Owned: %d", count));
+                });
             }
         });
 

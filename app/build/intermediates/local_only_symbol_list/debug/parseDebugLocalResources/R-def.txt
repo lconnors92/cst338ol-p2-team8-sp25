@@ -7,6 +7,7 @@ drawable ic_launcher_foreground
 id CharacterListTitleTextView
 id accessInventoryButton
 id adminButton
+id characterCountTextView
 id characterRecyclerItemTextView
 id characterSelectionButton
 id claimButton
@@ -33,6 +34,7 @@ string access_inventory
 string admin_only
 string app_name
 string character_selection
+string characters
 string claim
 string confirm_passwordsignup
 string create_character
