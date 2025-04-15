@@ -10,16 +10,42 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.project02.database.GameRepository;
+import com.example.project02.database.entities.User;
+import com.example.project02.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
     private static final String MAIN_ACTIVITY_USER_ID = "MAIN_ACTIVITY_USER_ID";
     public static final String TAG = "APP_DATABASE";
+    private ActivityMainBinding binding;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        return;
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        // Button to create a character
+        binding.createCharacterButton.setOnClickListener(v -> {
+            // Launch create character activity (not provided, but assuming it's already implemented)
+            //Intent intent = new Intent(MainActivity.this, CreateCharacterActivity.class);
+            //startActivity(intent);
+        });
+
+        // Button to view the character selection screen (list of public characters)
+        binding.characterSelectionButton.setOnClickListener(v -> {
+            // Launch the PublicCharacterListActivity to view public characters
+            Intent intent = new Intent(MainActivity.this, PublicCharacterListActivity.class);
+            startActivity(intent);
+        });
+
+        // Button to access inventory (assuming you have an inventory screen implemented)
+        binding.accessInventoryButton.setOnClickListener(v -> {
+            // Launch the Inventory Activity (not implemented here)
+            //Intent intent = new Intent(MainActivity.this, InventoryActivity.class);
+            //startActivity(intent);
+        });
     }
 
     static Intent mainActivityIntentFactory(Context context, int userId) {

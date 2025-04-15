@@ -54,6 +54,14 @@ public abstract class AppDatabase extends RoomDatabase {
                 dao.insert(admin);
                 User testUser1 = new User("testuser1", "testuser1");
                 dao.insert(testUser1);
+
+                CharacterDAO cDao = INSTANCE.characterDAO();
+                cDao.deleteAll();
+                Character privateCharacter = new Character("privatename1", "privatespecies1", "privateclass1", 1, false, 1);
+                cDao.insert(privateCharacter);
+                Character publicCharacter = new Character("publicname1", "publicspecies1", "publicclass1", 2, true, 2 );
+                cDao.insert(publicCharacter);
+
             });
 
         }

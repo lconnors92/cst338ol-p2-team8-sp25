@@ -14,4 +14,6 @@
     <string name="passwordsignup">Password</string>
     <string name="confirm_passwordsignup">Confirm Password</string>
     <string name="sign_up_in_activity_sign_up">Sign Up</string>
+    <string name="public_character_list">Public Character List</string>
+    <string name="claim">Claim</string>
 </resources>

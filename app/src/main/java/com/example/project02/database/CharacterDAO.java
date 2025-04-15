@@ -32,5 +32,6 @@ public interface CharacterDAO {
     @Query("SELECT * FROM " + AppDatabase.CHARACTER_TABLE + " WHERE userId = :loggedInUserId ORDER BY userId DESC")
     LiveData<List<Character>> getRecordsetUserIdLiveData(int loggedInUserId);
 
+    @Query("DELETE from " + AppDatabase.CHARACTER_TABLE) void deleteAll();
 }
 
