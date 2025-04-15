@@ -3112,6 +3112,7 @@ id ALT
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
+id CharacterListTitleTextView
 id FUNCTION
 id META
 id NO_DEBUG
@@ -3223,11 +3224,13 @@ id center_vertical
 id chain
 id chain2
 id chains
+id characterRecyclerItemTextView
 id characterSelectionButton
 id checkbox
 id checked
 id chronometer
 id circle_center
+id claimButton
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -3357,7 +3360,9 @@ id line3
 id linear
 id listMode
 id list_item
+id logDisplayRecyclerView
 id loginButton
+id logoutMenuItem
 id m3_side_sheet
 id main
 id marquee
@@ -3741,7 +3746,9 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_login
 layout activity_main
+layout activity_public_character_list
 layout activity_signup
+layout character_recycler_item
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3821,6 +3828,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+menu logout_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
@@ -3872,6 +3880,7 @@ string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
 string character_selection
+string claim
 string clear_text_end_icon_content_description
 string confirm_passwordsignup
 string create_character
@@ -3991,6 +4000,7 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string public_character_list
 string search_menu_title
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description
