@@ -11,7 +11,7 @@
         android:id="@+id/welcomeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="25dp"
         android:gravity="center"
         android:text="@string/welcome_user"
         android:textSize="40sp"
@@ -23,7 +23,7 @@
         android:id="@+id/createCharacterButton"
         android:layout_width="300dp"
         android:layout_height="125dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="30dp"
         android:text="@string/create_character"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +34,7 @@
         android:id="@+id/characterSelectionButton"
         android:layout_width="300dp"
         android:layout_height="125dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:text="@string/character_selection"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,12 +44,23 @@
         android:id="@+id/accessInventoryButton"
         android:layout_width="300dp"
         android:layout_height="125dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:text="@string/access_inventory"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/characterSelectionButton" />
+    <Button
+        android:id="@+id/adminButton"
+        android:layout_width="300dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/admin_only"
+        android:textSize="32sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/accessInventoryButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

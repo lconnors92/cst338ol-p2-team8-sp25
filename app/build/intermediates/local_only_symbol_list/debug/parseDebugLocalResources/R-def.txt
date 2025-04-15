@@ -6,6 +6,7 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 id CharacterListTitleTextView
 id accessInventoryButton
+id adminButton
 id characterRecyclerItemTextView
 id characterSelectionButton
 id claimButton
@@ -29,6 +30,7 @@ menu logout_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 string access_inventory
+string admin_only
 string app_name
 string character_selection
 string claim
