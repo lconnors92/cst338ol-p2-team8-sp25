@@ -109,4 +109,6 @@ public class Character {
     public void setUserId(int userId) {
         this.userId = userId;
     }
+
+
 }
