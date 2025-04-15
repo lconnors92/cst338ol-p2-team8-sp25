@@ -28,23 +28,24 @@ public class MainActivity extends AppCompatActivity {
 
         // Button to create a character
         binding.createCharacterButton.setOnClickListener(v -> {
-            // Launch create character activity (not provided, but assuming it's already implemented)
-            //Intent intent = new Intent(MainActivity.this, CreateCharacterActivity.class);
+            // Launch create character activity
+            // Intent intent = new Intent(MainActivity.this, CreateCharacterActivity.class);
             //startActivity(intent);
         });
 
         // Button to view the character selection screen (list of public characters)
+        // Missing MainActivity methods to fully implement, aiming for 4/16
         binding.characterSelectionButton.setOnClickListener(v -> {
             // Launch the PublicCharacterListActivity to view public characters
             Intent intent = new Intent(MainActivity.this, PublicCharacterListActivity.class);
             startActivity(intent);
         });
 
-        // Button to access inventory (assuming you have an inventory screen implemented)
+        // Button to access user inventory
         binding.accessInventoryButton.setOnClickListener(v -> {
-            // Launch the Inventory Activity (not implemented here)
-            //Intent intent = new Intent(MainActivity.this, InventoryActivity.class);
-            //startActivity(intent);
+            // Launch the Inventory Activity
+            // Intent intent = new Intent(MainActivity.this, InventoryActivity.class);
+            // startActivity(intent);
         });
     }
 
