@@ -100,7 +100,7 @@
         android:layout_width="200sp"
         android:layout_height="125sp"
         android:layout_marginTop="20sp"
-        android:text="@string/edit_character"
+        android:text="@string/edit_password"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/guidelineConstraint"
