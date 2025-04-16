@@ -33,7 +33,7 @@ public interface CharacterDAO {
     LiveData<List<Character>> getRecordsetUserIdLiveData(int loggedInUserId);
 
     @Query("DELETE from " + AppDatabase.CHARACTER_TABLE) void deleteAll();
-    //testing
+
     @Query("SELECT COUNT(*) FROM " + AppDatabase.CHARACTER_TABLE + " WHERE userId = :userId")
     LiveData<Integer> getCharacterCountByUser(int userId);
 
