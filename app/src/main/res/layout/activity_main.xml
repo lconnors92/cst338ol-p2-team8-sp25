@@ -7,6 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineConstraint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
     <TextView
         android:id="@+id/welcomeTextView"
         android:layout_width="wrap_content"
@@ -18,62 +25,99 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/characterCountTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         android:gravity="center"
         android:text="@string/characters"
         android:textSize="28sp"
-        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/welcomeTextView"
-        />
+        app:layout_constraintTop_toBottomOf="@id/welcomeTextView" />
 
     <Button
         android:id="@+id/createCharacterButton"
-        android:layout_width="300dp"
+        android:layout_width="200sp"
         android:layout_height="125dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="70dp"
         android:text="@string/create_character"
         android:textSize="32sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guidelineConstraint"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/characterCountTextView" />
 
     <Button
         android:id="@+id/characterSelectionButton"
-        android:layout_width="300dp"
+        android:layout_width="200sp"
         android:layout_height="125dp"
         android:layout_marginTop="20dp"
         android:text="@string/character_selection"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guidelineConstraint"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/createCharacterButton" />
+
     <Button
         android:id="@+id/accessInventoryButton"
-        android:layout_width="300dp"
-        android:layout_height="125dp"
+        android:layout_width="200sp"
+        android:layout_height="125sp"
         android:layout_marginTop="20dp"
         android:text="@string/access_inventory"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guidelineConstraint"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/characterSelectionButton" />
+
+    <Button
+        android:id="@+id/editCharacterButton"
+        android:layout_width="200sp"
+        android:layout_height="125sp"
+        android:layout_marginTop="70dp"
+        android:text="@string/edit_character"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guidelineConstraint"
+        app:layout_constraintTop_toBottomOf="@+id/characterCountTextView" />
+
+    <Button
+        android:id="@+id/viewCharacterButton"
+        android:layout_width="200sp"
+        android:layout_height="125sp"
+        android:layout_marginTop="20sp"
+        android:text="@string/view_character"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guidelineConstraint"
+        app:layout_constraintTop_toBottomOf="@+id/editCharacterButton" />
+
+    <Button
+        android:id="@+id/editPasswordButton"
+        android:layout_width="200sp"
+        android:layout_height="125sp"
+        android:layout_marginTop="20sp"
+        android:text="@string/edit_password"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guidelineConstraint"
+        app:layout_constraintTop_toBottomOf="@+id/viewCharacterButton" />
+
+
     <Button
         android:id="@+id/adminButton"
         android:layout_width="300dp"
-        android:layout_height="125dp"
+        android:layout_height="125sp"
         android:layout_marginTop="20dp"
         android:text="@string/admin_only"
         android:textSize="32sp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/accessInventoryButton"
-        android:visibility="gone"
-        />
+        app:layout_constraintTop_toBottomOf="@id/accessInventoryButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

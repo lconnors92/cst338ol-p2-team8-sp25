@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 // Setup other buttons
                 setupCharacterButtons();
 
-                //testing
+                //Character owned display
                 database.characterDAO().getCharacterCountByUser(userId).observe(this, count -> {
                     binding.characterCountTextView.setText(String.format("Characters Owned: %d", count));
                 });
