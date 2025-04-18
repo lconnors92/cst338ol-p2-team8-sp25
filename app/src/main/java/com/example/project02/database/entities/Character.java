@@ -38,7 +38,7 @@ public class Character {
         this.species = species;
         this.characterClass = characterClass;
         this.age = age;
-        this.isPublic = false;
+        this.isPublic = isPublic;
         this.userId = userId;
     }
 
