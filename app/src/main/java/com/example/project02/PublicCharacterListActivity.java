@@ -1,54 +1,43 @@
 package com.example.project02;
 
 import android.os.Bundle;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project02.characterViewHolders.CharacterAdapter;
-import com.example.project02.characterViewHolders.CharacterViewModel;
-import com.example.project02.database.CharacterDAO;
-import com.example.project02.database.GameRepository;
+import com.example.project02.database.AppDatabase;
 import com.example.project02.database.entities.Character;
-import com.example.project02.database.entities.User;
 import com.example.project02.databinding.ActivityPublicCharacterListBinding;
 
 import java.util.List;
 
 public class PublicCharacterListActivity extends AppCompatActivity {
+    private com.example.project02.characterViewHolders.CharacterAdapter characterAdapter;
+    private RecyclerView recyclerView;
+    private AppDatabase db;
 
-    private ActivityPublicCharacterListBinding binding;
-    private GameRepository repository;
-
-    private User user;
-    private CharacterViewModel characterViewModel;
+    ActivityPublicCharacterListBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityPublicCharacterListBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        setContentView(R.layout.activity_public_character_list);
 
-        characterViewModel = new ViewModelProvider(this).get(CharacterViewModel.class);
-
-        RecyclerView recyclerView = binding.logDisplayRecyclerView;
-        final CharacterAdapter adapter = new CharacterAdapter(new CharacterAdapter.CharacterDiff());
-        recyclerView.setAdapter(adapter);
+        recyclerView = findViewById(R.id.recyclerViewCharacters);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        repository = GameRepository.getRepository(getApplication());
+        db = AppDatabase.getDatabase(this);
 
-
-        characterViewModel.getAllLogsById(user.getId()).observe(this, characters -> {
-            //characters.submitList(characters);
+        db.characterDAO().getPublicCharacters().observe(this, new Observer<List<Character>>() {
+            @Override
+            public void onChanged(List<Character> characters) {
+                characterAdapter = new CharacterAdapter(characters);
+                recyclerView.setAdapter(characterAdapter);
+            }
         });
-
-        //LiveData<Character> characterObserver = repository.getPublicCharacters();
-
-
     }
 }

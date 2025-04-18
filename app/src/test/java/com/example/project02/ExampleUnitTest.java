@@ -57,7 +57,7 @@ public class ExampleUnitTest {
         characterDAO.insert(publicChar);
         characterDAO.insert(privateChar);
 
-        List<Character> publicList = characterDAO.getPublicCharacters();
+        List<Character> publicList = (List<Character>) characterDAO.getPublicCharacters();
         assertEquals(1, publicList.size());
         assertEquals("PublicOne", publicList.get(0).getName());
     }
