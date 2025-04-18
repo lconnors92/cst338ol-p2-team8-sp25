@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/setCharacterName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/character_name"
+        android:inputType="text" />
+
+
+    <EditText
+        android:id="@+id/setCharacterSpecies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/character_species"
+        android:inputType="text" />
+
+
+    <EditText
+        android:id="@+id/setCharacterClass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/character_class"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/etCharacterAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/character_age"
+        android:inputType="number" />
+
+
+    <Switch
+        android:id="@+id/publicToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/is_character_public"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+
+    <Button
+        android:id="@+id/saveCharacter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save_character" />
+</LinearLayout>

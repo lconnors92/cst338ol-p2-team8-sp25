@@ -54,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
         // Button to create a character
         binding.createCharacterButton.setOnClickListener(v -> {
             // Launch create character activity
-            // Intent intent = new Intent(MainActivity.this, CreateCharacterActivity.class);
-            //startActivity(intent);
+            Intent intent = new Intent(MainActivity.this, CharacterCreationActivity.class);
+            startActivity(intent);
         });
 
         // Button to view the character selection screen (list of public characters)
