@@ -1,41 +1,58 @@
 package com.example.project02.characterViewHolders;
 
+import android.annotation.SuppressLint;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.DiffUtil;
-import androidx.recyclerview.widget.ListAdapter;
+import androidx.recyclerview.widget.RecyclerView;
 
-public class CharacterAdapter extends ListAdapter<Character, CharacterViewHolder> {
-    private boolean isAdmin;
+import com.example.project02.R;
+import com.example.project02.database.entities.Character;
 
-    public CharacterAdapter(@NonNull DiffUtil.ItemCallback<Character> diffCallback) {
-        super(diffCallback);
-        this.isAdmin = isAdmin;
+import java.util.List;
+
+public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.CharacterViewHolder> {
+    private List<Character> characterList;
+
+    public CharacterAdapter(List<Character> characterList) {
+        this.characterList = characterList;
     }
 
     @NonNull
     @Override
     public CharacterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return CharacterViewHolder.create(parent);
+        View itemView = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.character_recycler_item, parent, false);
+        return new CharacterViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CharacterViewHolder holder, int position) {
-        Character current = getItem(position);
-        holder.bind(current.toString());
+        Character currentCharacter = characterList.get(position);
+        holder.characterNameTextView.setText(currentCharacter.getName());
     }
 
-    public static class CharacterDiff extends DiffUtil.ItemCallback<Character> {
-        @Override
-        public boolean areItemsTheSame(@NonNull Character oldItem, @NonNull Character newItem) {
-            return oldItem == newItem;
-        }
+    @Override
+    public int getItemCount() {
+        return characterList.size();
+    }
 
-        @Override
-        public boolean areContentsTheSame(@NonNull Character oldItem, @NonNull Character newItem) {
-            return oldItem.equals(newItem);
+    @SuppressLint("NotifyDataSetChanged")
+    public void setCharacterList(List<Character> characters) {
+        this.characterList = characters;
+        notifyDataSetChanged(); // <- This refreshes the RecyclerView
+    }
+
+
+    public static class CharacterViewHolder extends RecyclerView.ViewHolder {
+        private final TextView characterNameTextView;
+
+        public CharacterViewHolder(View itemView) {
+            super(itemView);
+            characterNameTextView = itemView.findViewById(R.id.characterRecyclerItemTextView);
         }
     }
 }
-

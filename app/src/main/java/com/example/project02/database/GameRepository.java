@@ -47,22 +47,28 @@ public class GameRepository {
         return null;
     }
 
-    public ArrayList<Character> getPublicCharacters() {
-        Future<ArrayList<Character>> future = AppDatabase.databaseWriteExecutor.submit(
-                new Callable<ArrayList<Character>>() {
-                    @Override
-                    public ArrayList<Character> call() {
-                        return (ArrayList<Character>) characterDAO.getPublicCharacters();
-                    }
-                }
-        );
-        try {
-            return future.get();
-        } catch (InterruptedException | ExecutionException e) {
-            Log.e("CharacterRepository", "Error fetching public characters", e);
-        }
-        return null;
+//    public ArrayList<Character> getPublicCharacters() {
+//        Future<ArrayList<Character>> future = AppDatabase.databaseWriteExecutor.submit(
+//                new Callable<ArrayList<Character>>() {
+//                    @Override
+//                    public ArrayList<Character> call() {
+//                        return (ArrayList<Character>) characterDAO.getPublicCharacters();
+//                    }
+//                }
+//        );
+//        try {
+//            return future.get();
+//        } catch (InterruptedException | ExecutionException e) {
+//            Log.e("CharacterRepository", "Error fetching public characters", e);
+//        }
+//        return null;
+//    }
+
+
+    public LiveData<List<Character>> getPublicCharacters() {
+        return (LiveData<List<Character>>) characterDAO.getPublicCharacters();
     }
+
 
     public void insertCharacter(Character character) {
         AppDatabase.databaseWriteExecutor.execute(() ->

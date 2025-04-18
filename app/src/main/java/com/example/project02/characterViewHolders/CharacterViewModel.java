@@ -12,6 +12,7 @@ import java.util.List;
 
 public class CharacterViewModel extends AndroidViewModel {
     private final GameRepository repository;
+    public LiveData<Object> getPublicCharacters;
 
     public CharacterViewModel(Application application) {
         super(application);
@@ -21,6 +22,12 @@ public class CharacterViewModel extends AndroidViewModel {
     public LiveData<List<Character>> getAllLogsById(int userId) {
         return repository.getAllLogsByUserIdLiveData(userId);
     }
+
+
+    public LiveData<List<Character>> getPublicCharacters() {
+        return repository.getPublicCharacters();
+    }
+
 
     public void insert(Character character) {
         repository.insertCharacter(character);
