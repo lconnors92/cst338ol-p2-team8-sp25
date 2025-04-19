@@ -32,7 +32,7 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.Char
     @Override
     public void onBindViewHolder(@NonNull CharacterViewHolder holder, int position) {
         Character currentCharacter = characterList.get(position);
-        holder.characterNameTextView.setText(currentCharacter.getName());
+        holder.characterNameTextView.setText(currentCharacter.toString());
     }
 
     @Override
@@ -43,7 +43,7 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.Char
     @SuppressLint("NotifyDataSetChanged")
     public void setCharacterList(List<Character> characters) {
         this.characterList = characters;
-        notifyDataSetChanged(); // <- This refreshes the RecyclerView
+        notifyDataSetChanged();
     }
 
 
