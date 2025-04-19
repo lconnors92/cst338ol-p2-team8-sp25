@@ -20,7 +20,7 @@ public class CharacterViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bind(String character) {
-        characterRecyclerItemTextView.setText(character.toString());
+        characterRecyclerItemTextView.setText(character);
     }
 
     static CharacterViewHolder create(ViewGroup parent) {

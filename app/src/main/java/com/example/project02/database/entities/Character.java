@@ -25,12 +25,11 @@ public class Character {
     @Override
     @NonNull
     public String toString() {
-        return "Character{" +
-                "age=" + age +
-                ", characterClass='" + characterClass + '\'' +
-                ", species='" + species + '\'' +
-                ", name='" + name + '\'' +
-                '}';
+        return "Character: " + name + "\n" +
+                "Class: " + characterClass + "\n" +
+                "Species: " + species + "\n" +
+                "Age: " + age + "\n" +
+                "Creator ID: " + userId;
     }
 
     public Character(String name, String species, String characterClass, int age, boolean isPublic, int userId) {
