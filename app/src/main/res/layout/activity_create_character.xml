@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/character_age"
         android:inputType="number"
-        android:textSize="32dp"/>
+        android:textSize="32sp"/>
 
 
     <Switch
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:text="@string/is_character_public"
         tools:ignore="UseSwitchCompatOrMaterialXml"
-        android:textSize="24dp"/>
+        android:textSize="24sp"/>
 
 
     <Button
@@ -55,5 +55,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/save_character"
-        android:textSize="32dp" />
+        android:textSize="32sp" />
 </LinearLayout>
