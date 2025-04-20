@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/character_name"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textSize="32sp"/>
 
 
     <EditText
@@ -19,7 +20,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/character_species"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textSize="32sp"/>
 
 
     <EditText
@@ -27,14 +29,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/character_class"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textSize="32sp"/>
 
     <EditText
         android:id="@+id/setCharacterAge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/character_age"
-        android:inputType="number" />
+        android:inputType="number"
+        android:textSize="32dp"/>
 
 
     <Switch
@@ -42,12 +46,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/is_character_public"
-        tools:ignore="UseSwitchCompatOrMaterialXml" />
+        tools:ignore="UseSwitchCompatOrMaterialXml"
+        android:textSize="24dp"/>
 
 
     <Button
         android:id="@+id/saveCharacter"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/save_character" />
+        android:text="@string/save_character"
+        android:textSize="32dp" />
 </LinearLayout>
