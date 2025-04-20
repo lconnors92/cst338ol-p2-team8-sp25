@@ -12,14 +12,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.project02.characterViewHolders.CharacterViewModel;
+import com.example.project02.database.CharacterDAO;
+import com.example.project02.database.UserDAO;
 import com.example.project02.database.entities.Character;
+import com.example.project02.database.entities.User;
 
 public class CharacterCreationActivity extends AppCompatActivity {
 
-    private EditText setCharacterName, setCharacterSpecies, setCharacterClass;
+    private EditText setCharacterName, setCharacterSpecies, setCharacterClass, setCharacterAge;
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     private Switch publicToggle;
     private Button saveCharacter;
+
+    public static int userID;
 
     private CharacterViewModel characterViewModel;
 
@@ -31,6 +36,7 @@ public class CharacterCreationActivity extends AppCompatActivity {
         setCharacterName = findViewById(R.id.setCharacterName);
         setCharacterSpecies = findViewById(R.id.setCharacterSpecies);
         setCharacterClass = findViewById(R.id.setCharacterClass);
+        setCharacterAge = findViewById(R.id.setCharacterAge);
         publicToggle = findViewById(R.id.publicToggle);
         saveCharacter = findViewById(R.id.saveCharacter);
 
@@ -48,6 +54,7 @@ public class CharacterCreationActivity extends AppCompatActivity {
         String name = setCharacterName.getText().toString();
         String species = setCharacterSpecies.getText().toString();
         String characterClass = setCharacterClass.getText().toString();
+        int age = Integer.parseInt(setCharacterAge.getText().toString());
         boolean isPublic = publicToggle.isChecked();
 
         if (name.isEmpty() || species.isEmpty() || characterClass.isEmpty()) {
@@ -55,7 +62,7 @@ public class CharacterCreationActivity extends AppCompatActivity {
             return;
         }
 
-        Character newCharacter = new Character(name, species, characterClass, 1, isPublic, 0);
+        Character newCharacter = new Character(name, species, characterClass, age, isPublic, userID);
 
         characterViewModel.insert(newCharacter);
 
