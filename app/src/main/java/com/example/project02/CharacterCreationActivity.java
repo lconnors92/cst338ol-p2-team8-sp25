@@ -66,6 +66,10 @@ public class CharacterCreationActivity extends AppCompatActivity {
 
         Character newCharacter = new Character(name, species, characterClass, age, isPublic, userId);
 
+        if (isPublic) {
+            newCharacter.setUserId(0);
+        }
+
         characterViewModel.insert(newCharacter);
 
         Toast.makeText(this, "Character Created!", Toast.LENGTH_SHORT).show();

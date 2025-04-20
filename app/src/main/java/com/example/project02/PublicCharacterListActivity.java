@@ -1,6 +1,8 @@
 package com.example.project02;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -91,7 +93,8 @@ public class PublicCharacterListActivity extends AppCompatActivity {
 
     User user;
     private int getCurrentUserId() {
-        return user.getId();
+        SharedPreferences sharedPreferences = getSharedPreferences("SHARED_PREFERENCE_USERID_KEY", MODE_PRIVATE);
+        return sharedPreferences.getInt("SHARED_PREFERENCE_USERID_KEY", -1);
     }
 
     private void addToInventory(Character character) {
