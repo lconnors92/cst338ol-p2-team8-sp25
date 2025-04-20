@@ -24,9 +24,9 @@ public class CharacterCreationActivity extends AppCompatActivity {
     private Switch publicToggle;
     private Button saveCharacter;
 
-    public static int userID;
-
     private CharacterViewModel characterViewModel;
+
+    private int userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +39,7 @@ public class CharacterCreationActivity extends AppCompatActivity {
         setCharacterAge = findViewById(R.id.setCharacterAge);
         publicToggle = findViewById(R.id.publicToggle);
         saveCharacter = findViewById(R.id.saveCharacter);
+        userId = getIntent().getIntExtra("USER_ID", -1);
 
         characterViewModel = new ViewModelProvider(this).get(CharacterViewModel.class);
 
@@ -62,7 +63,8 @@ public class CharacterCreationActivity extends AppCompatActivity {
             return;
         }
 
-        Character newCharacter = new Character(name, species, characterClass, age, isPublic, userID);
+
+        Character newCharacter = new Character(name, species, characterClass, age, isPublic, userId);
 
         characterViewModel.insert(newCharacter);
 
