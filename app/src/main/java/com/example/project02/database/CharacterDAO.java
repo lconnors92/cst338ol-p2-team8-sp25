@@ -27,6 +27,14 @@ public interface CharacterDAO {
     @Query("SELECT * FROM " + AppDatabase.CHARACTER_TABLE + " WHERE isPublic = 1")
     LiveData<List<Character>> getPublicCharacters();
 
+    /**
+     * LiveData was making the accompanying test angry, the Query below allows test for public characters the same way
+     * as above. As above, so below.
+     */
+
+    @Query("SELECT * FROM " + AppDatabase.CHARACTER_TABLE + " WHERE isPublic = 1")
+    List<Character> getPublicCharactersList();
+
     @Query("SELECT * FROM " + AppDatabase.CHARACTER_TABLE + " WHERE userId = :loggedInUserId ORDER BY userId DESC")
     LiveData<List<Character>> getRecordsetUserId(int loggedInUserId);
 

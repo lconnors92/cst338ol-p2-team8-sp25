@@ -25,9 +25,8 @@ import com.example.project02.databinding.ActivityPublicCharacterListBinding;
 import java.util.List;
 
 /**
- * TODO tie user making char's ID to created char
- * TODO make age and userID display properly
- * TODO make Claim button not crash app, possibly code addToInventory up
+ * all functionality T0D0's d0ne
+ * need cleanup
  */
 
 public class PublicCharacterListActivity extends AppCompatActivity {
