@@ -6,6 +6,7 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.example.project02.database.entities.Character;
 
@@ -37,5 +38,7 @@ public interface CharacterDAO {
     @Query("SELECT COUNT(*) FROM " + AppDatabase.CHARACTER_TABLE + " WHERE userId = :userId")
     LiveData<Integer> getCharacterCountByUser(int userId);
 
+    @Update
+    void update(Character selectedCharacter);
 }
 
