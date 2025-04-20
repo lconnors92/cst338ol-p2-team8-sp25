@@ -17,8 +17,15 @@ import java.util.List;
 public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.CharacterViewHolder> {
     private List<Character> characterList;
 
-    public CharacterAdapter(List<Character> characterList) {
+    public interface OnCharacterClickListener {
+        void onCharacterClick(Character character);
+    }
+
+    private final OnCharacterClickListener characterClickListener;
+
+    public CharacterAdapter(List<Character> characterList, OnCharacterClickListener characterClickListener) {
         this.characterList = characterList;
+        this.characterClickListener = characterClickListener;
     }
 
     @NonNull
@@ -33,6 +40,13 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.Char
     public void onBindViewHolder(@NonNull CharacterViewHolder holder, int position) {
         Character currentCharacter = characterList.get(position);
         holder.characterNameTextView.setText(currentCharacter.toString());
+
+        holder.itemView.setOnClickListener(v -> {
+            if (characterClickListener != null) {
+                characterClickListener.onCharacterClick(currentCharacter);
+            }
+        });
+
     }
 
     @Override
