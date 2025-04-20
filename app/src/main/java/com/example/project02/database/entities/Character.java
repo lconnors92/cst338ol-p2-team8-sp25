@@ -25,11 +25,18 @@ public class Character {
     @Override
     @NonNull
     public String toString() {
-        return "Character: " + name + "\n" +
-                "Class: " + characterClass + "\n" +
-                "Species: " + species + "\n" +
-                "Age: " + age + "\n" +
-                "Creator ID: " + userId;
+        if (userId == 0) {
+            return "Character: " + name + "\n" +
+                    "Class: " + characterClass + "\n" +
+                    "Species: " + species + "\n" +
+                    "Age: " + age;
+        } else {
+            return "Character: " + name + "\n" +
+                    "Class: " + characterClass + "\n" +
+                    "Species: " + species + "\n" +
+                    "Age: " + age + "\n" +
+                    "Creator ID: " + userId;
+        }
     }
 
     public Character(String name, String species, String characterClass, int age, boolean isPublic, int userId) {
@@ -40,7 +47,6 @@ public class Character {
         this.isPublic = isPublic;
         this.userId = userId;
     }
-
 
 
     @Override
