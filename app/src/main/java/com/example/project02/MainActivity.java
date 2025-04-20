@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         binding.createCharacterButton.setOnClickListener(v -> {
             // Launch create character activity
             Intent intent = new Intent(MainActivity.this, CharacterCreationActivity.class);
+            intent.putExtra("USER_ID", user.getId());
             startActivity(intent);
         });
 
