@@ -1,6 +1,5 @@
 package com.example.project02.characterViewHolders;
 
-import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,11 +53,6 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.Char
         return characterList.size();
     }
 
-    @SuppressLint("NotifyDataSetChanged")
-    public void setCharacterList(List<Character> characters) {
-        this.characterList = characters;
-        notifyDataSetChanged();
-    }
 
 
     public static class CharacterViewHolder extends RecyclerView.ViewHolder {

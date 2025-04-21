@@ -12,10 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.project02.characterViewHolders.CharacterViewModel;
-import com.example.project02.database.CharacterDAO;
-import com.example.project02.database.UserDAO;
+
 import com.example.project02.database.entities.Character;
-import com.example.project02.database.entities.User;
 
 public class CharacterCreationActivity extends AppCompatActivity {
 
