@@ -30,7 +30,7 @@ public class SignupActivity extends AppCompatActivity {
         }
 
         private void attemptSignup() {
-        String username = binding.usernameEditText.getText().toString().trim();
+        String username = binding.usernameEditText.getText().toString().trim().toLowerCase();
         String password = binding.passwordEditText.getText().toString().trim();
         String confirmPassword = binding.confirmPasswordEditText.getText().toString().trim();
 
@@ -40,6 +40,7 @@ public class SignupActivity extends AppCompatActivity {
             }
         if (!password.equals(confirmPassword)) {
             Toast.makeText(this, "Passwords don't match", Toast.LENGTH_SHORT).show();
+            return;
         }
         userViewModel.getUserByUsername(username).observe(this, existingUser -> {
             if (existingUser != null) {

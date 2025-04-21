@@ -8,6 +8,7 @@ import androidx.test.core.app.ApplicationProvider;
 import com.example.project02.database.AppDatabase;
 import com.example.project02.database.CharacterDAO;
 import com.example.project02.database.entities.Character;
+import com.example.project02.database.entities.User;
 
 import org.junit.After;
 import org.junit.Before;
@@ -61,4 +62,5 @@ public class ExampleUnitTest {
         assertEquals(1, publicList.size());
         assertEquals("PublicOne", publicList.get(0).getName());
     }
+
 }
