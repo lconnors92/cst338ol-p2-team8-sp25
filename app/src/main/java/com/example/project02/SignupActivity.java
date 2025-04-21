@@ -30,7 +30,7 @@ public class SignupActivity extends AppCompatActivity {
         }
 
         private void attemptSignup() {
-        String username = binding.usernameEditText.getText().toString().trim().toLowerCase();
+        String username = binding.usernameEditText.getText().toString().trim();
         String password = binding.passwordEditText.getText().toString().trim();
         String confirmPassword = binding.confirmPasswordEditText.getText().toString().trim();
 
@@ -56,4 +56,5 @@ public class SignupActivity extends AppCompatActivity {
         static Intent signupIntentFactory(Context context) {
         return new Intent(context, SignupActivity.class);
         }
+
     }
