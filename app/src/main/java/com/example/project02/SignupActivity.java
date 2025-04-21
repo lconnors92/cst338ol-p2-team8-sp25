@@ -56,4 +56,5 @@ public class SignupActivity extends AppCompatActivity {
         static Intent signupIntentFactory(Context context) {
         return new Intent(context, SignupActivity.class);
         }
+
     }
