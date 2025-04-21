@@ -1,7 +1,5 @@
 package com.example.project02;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -11,23 +9,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project02.characterViewHolders.CharacterAdapter;
 import com.example.project02.database.AppDatabase;
 import com.example.project02.database.entities.Character;
-import com.example.project02.database.entities.User;
+
 import com.example.project02.databinding.ActivityPublicCharacterListBinding;
 
-import java.util.List;
-
-/**
- * all functionality T0D0's d0ne
- * need cleanup
- */
 
 public class PublicCharacterListActivity extends AppCompatActivity {
     private com.example.project02.characterViewHolders.CharacterAdapter characterAdapter;
@@ -58,10 +49,10 @@ public class PublicCharacterListActivity extends AppCompatActivity {
 
         db.characterDAO().getPublicCharacters().observe(this, characters -> {
 
-                characterAdapter = new CharacterAdapter(characters, character -> {
-                    showCharacterDetails(character);
-                });
-                recyclerView.setAdapter(characterAdapter);
+            characterAdapter = new CharacterAdapter(characters, character -> {
+                showCharacterDetails(character);
+            });
+            recyclerView.setAdapter(characterAdapter);
         });
 
         claimButton.setOnClickListener(v -> {
@@ -90,7 +81,6 @@ public class PublicCharacterListActivity extends AppCompatActivity {
         claimButton.setVisibility(View.VISIBLE);
     }
 
-    User user;
     private int getCurrentUserId() {
         SharedPreferences sharedPreferences = getSharedPreferences("SHARED_PREFERENCE_USERID_KEY", MODE_PRIVATE);
         return sharedPreferences.getInt("SHARED_PREFERENCE_USERID_KEY", -1);

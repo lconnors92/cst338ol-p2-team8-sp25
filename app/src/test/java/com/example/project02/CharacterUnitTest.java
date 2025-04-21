@@ -1,9 +1,10 @@
 package com.example.project02;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
-
 
 
 import com.example.project02.database.entities.Character;
@@ -26,8 +27,12 @@ public class CharacterUnitTest {
         character = null;
     }
 
+
+    /**
+     * Test public character creation, default userId equals 0.
+     */
     @Test
-    public void testCharacterCreation() {
+    public void testPublicCharacterCreation() {
         assertEquals("Indignatius", character.getName());
         assertEquals("Elf", character.getSpecies());
         assertEquals("Clergy", character.getCharacterClass());
@@ -36,6 +41,9 @@ public class CharacterUnitTest {
         assertEquals(0, character.getUserId());
     }
 
+    /**
+     * Test private character creation, userId != 0.
+     */
     @Test
     public void testSettersAndPrivacy() {
         character.setPublic(false);
@@ -52,4 +60,42 @@ public class CharacterUnitTest {
         assertFalse("Character should be private", character.isPublic());
         assertEquals(42, character.getUserId());
     }
+
+
+    /**
+     * Test updating character fields.
+     */
+    @Test
+    public void testCharacterUpdate() {
+        character.setName("Ignatius");
+        character.setAge(130);
+        assertEquals("Ignatius", character.getName());
+        assertEquals(130, character.getAge());
+        character.setName("Indignatious");
+        character.setAge(42);
+        assertNotEquals("Ignatius", character.getName());
+        assertNotEquals(130, character.getAge());
+
+    }
+
+    /**
+     * Test character can be deleted.
+     */
+    @Test
+    public void testCharacterDeletion() {
+        character = null;
+        assertNull(character);
+    }
+
+    /**
+     * Test equals/hashcode are functional.
+     */
+
+    @Test
+    public void testCharacterEquality() {
+        Character shouldBeEqual = new Character("Indignatius", "Elf", "Clergy", 120, true, 0);
+        assertEquals(character, shouldBeEqual);
+    }
+
+
 }

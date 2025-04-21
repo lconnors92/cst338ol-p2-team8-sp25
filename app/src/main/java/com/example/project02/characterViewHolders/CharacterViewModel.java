@@ -12,7 +12,6 @@ import java.util.List;
 
 public class CharacterViewModel extends AndroidViewModel {
     private final GameRepository repository;
-    public LiveData<Object> getPublicCharacters;
 
     public CharacterViewModel(Application application) {
         super(application);
