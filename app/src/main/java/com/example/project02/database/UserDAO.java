@@ -13,7 +13,7 @@ import java.util.List;
 
 @Dao
 public interface UserDAO {
-    @Insert (onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(User user);
 
     @Delete
@@ -21,14 +21,19 @@ public interface UserDAO {
 
     @Query("SELECT * FROM " + AppDatabase.USER_TABLE + " ORDER BY username")
     LiveData<List<User>> getAllUsers();
-    @Query("DELETE from " + AppDatabase.USER_TABLE) void deleteAll();
+
+    @Query("DELETE from " + AppDatabase.USER_TABLE)
+    void deleteAll();
 
     @Query("SELECT * FROM " + AppDatabase.USER_TABLE + " WHERE username = :username")
     LiveData<User> getUserByUserName(String username);
 
     @Query("SELECT * FROM " + AppDatabase.USER_TABLE + " WHERE id = :userId")
     LiveData<User> getUserByUserId(int userId);
-    }
 
+    @Query("SELECT password FROM " + AppDatabase.USER_TABLE + " WHERE id = :userId")
+    String getPasswordByUserId(int userId);
 
-
+    @Query("UPDATE " + AppDatabase.USER_TABLE + " SET password = :newPassword WHERE id = :userId")
+    void updatePassword(int userId, String newPassword);
+}
