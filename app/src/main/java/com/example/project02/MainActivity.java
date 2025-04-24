@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int LOGGED_OUT = -1;
     private int loggedInUserId = -1;
     private User user;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
             finish();
             return;
         }
-
 
         //Admin Checker
         AppDatabase database = AppDatabase.getDatabase(this);
@@ -82,12 +81,10 @@ public class MainActivity extends AppCompatActivity {
         binding.createCharacterButton.setOnClickListener(v -> {
             // Launch create character activity
             Intent intent = new Intent(MainActivity.this, CharacterCreationActivity.class);
-            intent.putExtra("USER_ID", user.getId());
             startActivity(intent);
         });
 
         // Button to view the character selection screen (list of public characters)
-        // Missing MainActivity methods to fully implement, aiming for 4/16
         binding.characterSelectionButton.setOnClickListener(v -> {
             // Launch the PublicCharacterListActivity to view public characters
             Intent intent = new Intent(MainActivity.this, PublicCharacterListActivity.class);
@@ -99,6 +96,12 @@ public class MainActivity extends AppCompatActivity {
             // Launch the Inventory Activity
             // Intent intent = new Intent(MainActivity.this, InventoryActivity.class);
             // startActivity(intent);
+        });
+
+        binding.editPasswordButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, com.example.project02.viewmodel.EditPasswordActivity.class);
+            intent.putExtra("USER_ID", loggedInUserId);
+            startActivity(intent);
         });
     }
 
