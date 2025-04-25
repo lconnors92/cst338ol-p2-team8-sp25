@@ -1,4 +1,8 @@
-## Forge & Fate
+### **Forge & Fate**
+
+*Spring 2025 — Software Design Final Project (CSUMB CS Online)*
+
+## Description
 
 Forge & Fate provides Dungeons & Dragons players with a simple way to create, manage, and share unique characters — all in one place. The app helps players stay organized with easy-to-use tools for character management.
 
@@ -32,14 +36,12 @@ Forge & Fate provides Dungeons & Dragons players with a simple way to create, ma
 
 - Public Character List
 
-- RecyclerView for Character Lists
-
 - Admin Page
 
 - Main Page Navigation
 
 ## Authors
-Team 8 — CSUMB CS Online
+Team 8
 
 - Ethan Garcia
 
