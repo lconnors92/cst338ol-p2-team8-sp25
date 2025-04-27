@@ -34,7 +34,7 @@
             android:exported="false" />
 
         <activity
-            android:name=".AccessInventory"
+            android:name=".AccessInventoryActivity"
             android:exported="false" />
 
         <activity
