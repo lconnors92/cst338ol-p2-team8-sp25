@@ -58,10 +58,8 @@ public class AccessInventoryActivity extends AppCompatActivity {
                     Toast.makeText(AccessInventoryActivity.this, "No character selected.", Toast.LENGTH_SHORT).show();
                 }
             } else {
-                db.characterDAO().delete(selectedCharacter);
-
                 AppDatabase.databaseWriteExecutor.execute(() -> {
-                    db.characterDAO().update(selectedCharacter);
+                    db.characterDAO().delete(selectedCharacter);
                 });
                 Toast.makeText(AccessInventoryActivity.this, "Character removed!", Toast.LENGTH_SHORT).show();
             }
