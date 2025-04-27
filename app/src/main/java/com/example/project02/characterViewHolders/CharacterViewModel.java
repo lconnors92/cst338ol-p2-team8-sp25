@@ -31,4 +31,8 @@ public class CharacterViewModel extends AndroidViewModel {
     public void insert(Character character) {
         repository.insertCharacter(character);
     }
+
+    public void update(Character character) {
+        repository.updateCharacter(character);
+    }
 }

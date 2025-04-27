@@ -1,10 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".viewmodel.EditCharacterActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/editCharacterTitleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/edit_character_string"
+        android:textSize="42sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewCharacters"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toTopOf="@+id/setCharacterName"
+        />
+
+    <EditText
+        android:id="@+id/setCharacterName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/character_name"
+        android:inputType="text"
+        android:textSize="32sp"/>
+
+    <EditText
+        android:id="@+id/setCharacterSpecies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/character_species"
+        android:inputType="text"
+        android:textSize="32sp"/>
+
+
+    <EditText
+        android:id="@+id/setCharacterClass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/character_class"
+        android:inputType="text"
+        android:textSize="32sp"/>
+
+    <EditText
+        android:id="@+id/setCharacterAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/character_age"
+        android:inputType="number"
+        android:textSize="32sp"/>
+
+    <Switch
+        android:id="@+id/publicToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Public?"
+        tools:ignore="UseSwitchCompatOrMaterialXml"
+        android:textSize="24sp"/>
+
+    <Button
+        android:id="@+id/saveChanges"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Changes"
+        android:textSize="32sp" />
+
+</LinearLayout>

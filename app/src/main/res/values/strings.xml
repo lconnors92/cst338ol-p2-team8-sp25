@@ -37,4 +37,5 @@
     <string name="access_inventory_title">Access Inventory</string>
     <string name="remove">Remove</string>
     <string name="select_a_character_for_removal">Select a character for removal…</string>
+    <string name="edit_character_string">Edit Character</string>
 </resources>

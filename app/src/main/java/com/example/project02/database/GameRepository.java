@@ -77,6 +77,13 @@ public class GameRepository {
         });
     }
 
+    public void updateCharacter(Character character) {
+        AppDatabase.databaseWriteExecutor.execute(() ->
+        {
+            characterDAO.update(character);
+        });
+    }
+
     public LiveData<User> getUserByUserName(String username) {
         return userDAO.getUserByUserName(username);
     }
