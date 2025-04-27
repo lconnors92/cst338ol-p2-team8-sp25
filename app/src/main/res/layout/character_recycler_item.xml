@@ -13,6 +13,6 @@
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:text="@string/hello"
-        android:textSize="18sp" />
+        android:textSize="20sp" />
 
 </LinearLayout>
