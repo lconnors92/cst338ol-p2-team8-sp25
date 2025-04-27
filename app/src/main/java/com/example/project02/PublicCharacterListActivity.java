@@ -9,16 +9,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project02.characterViewHolders.CharacterAdapter;
 import com.example.project02.database.AppDatabase;
 import com.example.project02.database.entities.Character;
-
 import com.example.project02.databinding.ActivityPublicCharacterListBinding;
-
 
 public class PublicCharacterListActivity extends AppCompatActivity {
     private com.example.project02.characterViewHolders.CharacterAdapter characterAdapter;
@@ -26,12 +23,13 @@ public class PublicCharacterListActivity extends AppCompatActivity {
     private AppDatabase db;
 
     private Character selectedCharacter;
-
     private TextView selectedCharacterTextView;
     private LinearLayout characterDetailsSection;
     private Button claimButton;
 
     ActivityPublicCharacterListBinding binding;
+
+    private boolean isAdmin = false; // NEW: store if user is admin
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +45,17 @@ public class PublicCharacterListActivity extends AppCompatActivity {
 
         db = AppDatabase.getDatabase(this);
 
-        db.characterDAO().getPublicCharacters().observe(this, characters -> {
+        // NEW: Read if user is admin
+        isAdmin = getIntent().getBooleanExtra("isAdmin", false);
 
+        // Change button text if admin
+        if (isAdmin) {
+            claimButton.setText("Delete");
+        } else {
+            claimButton.setText("Claim");
+        }
+
+        db.characterDAO().getPublicCharacters().observe(this, characters -> {
             characterAdapter = new CharacterAdapter(characters, character -> {
                 showCharacterDetails(character);
             });
@@ -56,18 +63,12 @@ public class PublicCharacterListActivity extends AppCompatActivity {
         });
 
         claimButton.setOnClickListener(v -> {
-            if (selectedCharacter != null && selectedCharacter.isPublic()) {
-                selectedCharacter.setPublic(false);
-                selectedCharacter.setUserId(getCurrentUserId());
-                addToInventory(selectedCharacter);
-
-
-                AppDatabase.databaseWriteExecutor.execute(() -> {
-                    db.characterDAO().update(selectedCharacter);
-                });
-
-                Toast.makeText(PublicCharacterListActivity.this, "Character claimed!", Toast.LENGTH_SHORT).show();
-
+            if (selectedCharacter != null) {
+                if (isAdmin) {
+                    deleteCharacter(selectedCharacter);
+                } else {
+                    claimCharacter(selectedCharacter);
+                }
             }
         });
     }
@@ -86,12 +87,24 @@ public class PublicCharacterListActivity extends AppCompatActivity {
         return sharedPreferences.getInt("SHARED_PREFERENCE_USERID_KEY", -1);
     }
 
-    private void addToInventory(Character character) {
+    private void claimCharacter(Character character) {
+        character.setPublic(false);
         character.setUserId(getCurrentUserId());
 
         AppDatabase.databaseWriteExecutor.execute(() -> {
             db.characterDAO().update(character);
         });
+
+        Toast.makeText(PublicCharacterListActivity.this, "Character claimed!", Toast.LENGTH_SHORT).show();
+        finish(); // After claiming, exit the screen or refresh
     }
 
+    private void deleteCharacter(Character character) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            db.characterDAO().delete(character);
+        });
+
+        Toast.makeText(PublicCharacterListActivity.this, "Character deleted!", Toast.LENGTH_SHORT).show();
+        finish(); // After deleting, exit the screen or refresh
+    }
 }
