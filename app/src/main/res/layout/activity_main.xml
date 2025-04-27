@@ -34,6 +34,7 @@
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="@string/welcome_user"
+        android:textStyle="bold"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
