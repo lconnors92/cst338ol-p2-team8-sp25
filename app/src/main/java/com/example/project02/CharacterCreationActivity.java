@@ -1,6 +1,7 @@
 package com.example.project02;
 
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -37,7 +38,7 @@ public class CharacterCreationActivity extends AppCompatActivity {
         setCharacterAge = findViewById(R.id.setCharacterAge);
         publicToggle = findViewById(R.id.publicToggle);
         saveCharacter = findViewById(R.id.saveCharacter);
-        userId = getIntent().getIntExtra("USER_ID", -1);
+        userId = getCurrentUserId();
 
         characterViewModel = new ViewModelProvider(this).get(CharacterViewModel.class);
 
@@ -73,5 +74,10 @@ public class CharacterCreationActivity extends AppCompatActivity {
         Toast.makeText(this, "Character Created!", Toast.LENGTH_SHORT).show();
 
         finish();
+    }
+
+    private int getCurrentUserId() {
+        SharedPreferences sharedPreferences = getSharedPreferences("SHARED_PREFERENCE_USERID_KEY", MODE_PRIVATE);
+        return sharedPreferences.getInt("SHARED_PREFERENCE_USERID_KEY", -1);
     }
 }
