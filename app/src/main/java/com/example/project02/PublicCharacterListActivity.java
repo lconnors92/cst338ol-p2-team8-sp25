@@ -29,8 +29,6 @@ public class PublicCharacterListActivity extends AppCompatActivity {
 
     ActivityPublicCharacterListBinding binding;
 
-    private boolean isAdmin = false; // NEW: store if user is admin
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,16 +43,6 @@ public class PublicCharacterListActivity extends AppCompatActivity {
 
         db = AppDatabase.getDatabase(this);
 
-        // NEW: Read if user is admin
-        isAdmin = getIntent().getBooleanExtra("isAdmin", false);
-
-        // Change button text if admin
-        if (isAdmin) {
-            claimButton.setText("Delete");
-        } else {
-            claimButton.setText("Claim");
-        }
-
         db.characterDAO().getPublicCharacters().observe(this, characters -> {
             characterAdapter = new CharacterAdapter(characters, character -> {
                 showCharacterDetails(character);
@@ -63,12 +51,18 @@ public class PublicCharacterListActivity extends AppCompatActivity {
         });
 
         claimButton.setOnClickListener(v -> {
-            if (selectedCharacter != null) {
-                if (isAdmin) {
-                    deleteCharacter(selectedCharacter);
-                } else {
-                    claimCharacter(selectedCharacter);
-                }
+
+            if (selectedCharacter != null && selectedCharacter.isPublic()) {
+                selectedCharacter.setPublic(false);
+                selectedCharacter.setUserId(getCurrentUserId());
+                addToInventory(selectedCharacter);
+
+
+                AppDatabase.databaseWriteExecutor.execute(() -> {
+                    db.characterDAO().update(selectedCharacter);
+                });
+
+                Toast.makeText(PublicCharacterListActivity.this, "Character claimed!", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -87,24 +81,11 @@ public class PublicCharacterListActivity extends AppCompatActivity {
         return sharedPreferences.getInt("SHARED_PREFERENCE_USERID_KEY", -1);
     }
 
-    private void claimCharacter(Character character) {
-        character.setPublic(false);
+    private void addToInventory(Character character) {
         character.setUserId(getCurrentUserId());
 
         AppDatabase.databaseWriteExecutor.execute(() -> {
             db.characterDAO().update(character);
         });
-
-        Toast.makeText(PublicCharacterListActivity.this, "Character claimed!", Toast.LENGTH_SHORT).show();
-        finish(); // After claiming, exit the screen or refresh
-    }
-
-    private void deleteCharacter(Character character) {
-        AppDatabase.databaseWriteExecutor.execute(() -> {
-            db.characterDAO().delete(character);
-        });
-
-        Toast.makeText(PublicCharacterListActivity.this, "Character deleted!", Toast.LENGTH_SHORT).show();
-        finish(); // After deleting, exit the screen or refresh
     }
 }

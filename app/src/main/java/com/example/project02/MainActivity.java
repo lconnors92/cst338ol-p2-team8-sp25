@@ -90,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
         binding.characterSelectionButton.setOnClickListener(v -> {
             // Launch the PublicCharacterListActivity to view public characters
             Intent intent = new Intent(MainActivity.this, PublicCharacterListActivity.class);
-            intent.putExtra("isAdmin", user.isAdmin());
             startActivity(intent);
         });
 

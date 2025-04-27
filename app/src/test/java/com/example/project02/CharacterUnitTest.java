@@ -88,9 +88,36 @@ public class CharacterUnitTest {
     }
 
     /**
+     * Test character get/set Name.
+     */
+    @Test
+    public void testGetSetName() {
+        character.setName("Grimaldis");
+        assertEquals(character.getName(), "Grimaldis");
+    }
+
+    /**
+     * Test character get/set ID.
+     */
+    @Test
+    public void testGetSetId() {
+        character.setId(100);
+        assertEquals(100, character.getId());
+    }
+
+    /**
+     * Test character get/set age.
+     */
+    @Test
+    public void testGetSetAge() {
+        character.setAge(200);
+        assertEquals(200, character.getAge());
+    }
+
+
+    /**
      * Test equals/hashcode are functional.
      */
-
     @Test
     public void testCharacterEquality() {
         Character shouldBeEqual = new Character("Indignatius", "Elf", "Clergy", 120, true, 0);
