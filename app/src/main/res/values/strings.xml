@@ -16,7 +16,7 @@
     <string name="sign_up_in_activity_sign_up">Sign Up</string>
     <string name="public_character_list">Public Character List</string>
     <string name="claim">Claim</string>
-    <string name="admin_only">Admin Only!</string>
+    <string name="admin_only">Admin: Delete Character</string>
     <string name="characters">Characters Owned: %d</string>
     <string name="edit_character">Edit Character</string>
     <string name="view_character">Work in Progress</string>
