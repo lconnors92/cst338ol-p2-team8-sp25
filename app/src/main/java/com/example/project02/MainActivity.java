@@ -23,6 +23,7 @@ import com.example.project02.database.AppDatabase;
 import com.example.project02.database.GameRepository;
 import com.example.project02.database.entities.User;
 import com.example.project02.databinding.ActivityMainBinding;
+import com.example.project02.viewmodel.ViewCharacterActivity;
 
 import java.util.Objects;
 
@@ -95,8 +96,8 @@ public class MainActivity extends AppCompatActivity {
         // Button to access user inventory
         binding.accessInventoryButton.setOnClickListener(v -> {
             // Launch the Inventory Activity
-            // Intent intent = new Intent(MainActivity.this, InventoryActivity.class);
-            // startActivity(intent);
+            Intent intent = new Intent(MainActivity.this, AccessInventoryActivity.class);
+            startActivity(intent);
         });
 
         binding.editPasswordButton.setOnClickListener(v -> {

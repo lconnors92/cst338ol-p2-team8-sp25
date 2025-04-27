@@ -36,7 +36,7 @@ public interface CharacterDAO {
     List<Character> getPublicCharactersList();
 
     @Query("SELECT * FROM " + AppDatabase.CHARACTER_TABLE + " WHERE userId = :loggedInUserId ORDER BY userId DESC")
-    LiveData<List<Character>> getRecordsetUserId(int loggedInUserId);
+    LiveData<List<Character>> getRecordSetUserId(int loggedInUserId);
 
     @Query("SELECT * FROM " + AppDatabase.CHARACTER_TABLE + " WHERE userId = :loggedInUserId ORDER BY userId DESC")
     LiveData<List<Character>> getRecordsetUserIdLiveData(int loggedInUserId);

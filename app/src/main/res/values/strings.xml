@@ -32,7 +32,9 @@
     <string name="new_password">New Password</string>
     <string name="current_password">Current Password</string>
     <string name="confirm_new_password">Confirm New Password</string>
-
     <string name="hello">Hello</string>
     <string name="log_out">Logout</string>
+    <string name="access_inventory_title">Access Inventory</string>
+    <string name="remove">Remove</string>
+    <string name="select_a_character_for_removal">Select a character for removal…</string>
 </resources>
