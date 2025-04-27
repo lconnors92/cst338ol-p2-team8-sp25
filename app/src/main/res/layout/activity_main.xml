@@ -109,7 +109,6 @@
         app:layout_constraintStart_toStartOf="@id/guidelineConstraint"
         app:layout_constraintTop_toBottomOf="@+id/editCharacterButton" />
 
-
     <Button
         android:id="@+id/adminButton"
         android:layout_width="200sp"
