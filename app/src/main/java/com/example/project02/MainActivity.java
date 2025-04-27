@@ -23,6 +23,7 @@ import com.example.project02.database.AppDatabase;
 import com.example.project02.database.GameRepository;
 import com.example.project02.database.entities.User;
 import com.example.project02.databinding.ActivityMainBinding;
+import com.example.project02.viewmodel.EditCharacterActivity;
 import com.example.project02.viewmodel.ViewCharacterActivity;
 
 import java.util.Objects;
@@ -102,6 +103,12 @@ public class MainActivity extends AppCompatActivity {
 
         binding.editPasswordButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, com.example.project02.viewmodel.EditPasswordActivity.class);
+            intent.putExtra("USER_ID", loggedInUserId);
+            startActivity(intent);
+        });
+
+        binding.editCharacterButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, EditCharacterActivity.class);
             intent.putExtra("USER_ID", loggedInUserId);
             startActivity(intent);
         });
