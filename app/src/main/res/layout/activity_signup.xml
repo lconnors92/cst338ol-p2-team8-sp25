@@ -65,6 +65,7 @@
         android:layout_height="125dp"
         android:layout_marginTop="70dp"
         android:text="@string/sign_up_in_activity_sign_up"
+        android:textStyle="bold"
         android:textSize="42sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
